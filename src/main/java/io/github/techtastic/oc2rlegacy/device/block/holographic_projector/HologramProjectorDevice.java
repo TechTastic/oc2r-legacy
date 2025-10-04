@@ -18,16 +18,15 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.nio.channels.FileChannel;
-import java.util.List;
 import java.util.UUID;
 
-public class HologramProjectorDevice extends IdentityProxy<HologramProjectorBE> implements VMDevice, RPCDevice {
+public class HologramProjectorDevice extends IdentityProxy<HologramProjectorBE> implements VMDevice/*, RPCDevice*/ {
     private static final String ADDRESS_TAG_NAME = "address";
     private static final String BLOB_HANDLE_TAG_NAME = "blob";
 
     private final HologramProjectorBE hologram;
     private HologramFramebufferDevice framebuffer;
-    private final ObjectDevice device;
+    //private final ObjectDevice device;
 
     private final OptionalAddress address = new OptionalAddress();
     @Nullable private UUID blobHandle;
@@ -35,7 +34,7 @@ public class HologramProjectorDevice extends IdentityProxy<HologramProjectorBE> 
     public HologramProjectorDevice(HologramProjectorBE identity) {
         super(identity);
         this.hologram = identity;
-        this.device = new ObjectDevice(this, "hologram");
+        //this.device = new ObjectDevice(this, "hologram");
     }
 
     // Framebuffer Device Stuff
@@ -119,7 +118,7 @@ public class HologramProjectorDevice extends IdentityProxy<HologramProjectorBE> 
 
     // Hologram Device Stuff
 
-    @Callback
+    /*@Callback
     public void test() {}
 
     @Override
@@ -130,5 +129,5 @@ public class HologramProjectorDevice extends IdentityProxy<HologramProjectorBE> 
     @Override
     public @NotNull List<RPCMethodGroup> getMethodGroups() {
         return this.device.getMethodGroups();
-    }
+    }*/
 }

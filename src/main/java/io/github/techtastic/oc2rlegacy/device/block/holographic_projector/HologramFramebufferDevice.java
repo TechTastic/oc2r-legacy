@@ -11,10 +11,10 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 
 public class HologramFramebufferDevice implements MemoryMappedDevice {
-    private static final int WIDTH = 48;
-    private static final int LENGTH = 48;
-    private static final int HEIGHT = 32;
-    private static final int BYTES_PER_VOXEL = 4;
+    protected static final int WIDTH = 48;
+    protected static final int LENGTH = 48;
+    protected static final int HEIGHT = 32;
+    protected static final int BYTES_PER_VOXEL = 4;
     private static final int TOTAL_BYTES = WIDTH * LENGTH * HEIGHT * BYTES_PER_VOXEL;
     private final MappedByteBuffer buffer;
 
@@ -55,14 +55,6 @@ public class HologramFramebufferDevice implements MemoryMappedDevice {
         };
     }
 
-    /**
-     * Store (write) data to the device memory.
-     *
-     * @param offset The offset within this device's memory space
-     * @param value The value to write
-     * @param sizeLog2 The size of the write (Sizes.SIZE_8_LOG2, SIZE_16_LOG2, SIZE_32_LOG2, SIZE_64_LOG2)
-     * @throws MemoryAccessException if the access is out of bounds
-     */
     @Override
     public void store(int offset, long value, int sizeLog2) throws MemoryAccessException {
         int size = 1 << sizeLog2;
