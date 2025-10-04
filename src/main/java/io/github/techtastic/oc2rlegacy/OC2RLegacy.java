@@ -18,6 +18,7 @@ public class OC2RLegacy {
 
         MinecraftForge.EVENT_BUS.register(this);
 
+        BlockEntities.register(modEventBus);
         Blocks.register(modEventBus);
         Items.register(modEventBus);
         Providers.register(modEventBus);

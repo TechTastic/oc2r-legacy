@@ -1,5 +1,6 @@
 package io.github.techtastic.oc2rlegacy;
 
+import io.github.techtastic.oc2rlegacy.block.HologramProjectorBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -13,6 +14,9 @@ public class Blocks {
 
     public static final RegistryObject<Block> TRANSPOSER = BLOCKS.register("transposer", () ->
             new Block(BlockBehaviour.Properties.copy(li.cil.oc2.common.block.Blocks.REDSTONE_INTERFACE.get())));
+
+    public static final RegistryObject<Block> HOLOGRAM_PROJECTOR = BLOCKS.register("hologram_projector", () ->
+            new HologramProjectorBlock(BlockBehaviour.Properties.copy(li.cil.oc2.common.block.Blocks.REDSTONE_INTERFACE.get())));
 
     public static void register(IEventBus bus) {
         BLOCKS.register(bus);

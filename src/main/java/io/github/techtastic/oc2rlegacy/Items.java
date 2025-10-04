@@ -14,6 +14,9 @@ public class Items {
     public static final RegistryObject<Item> TRANSPOSER = ITEMS.register("transposer", () ->
             new BlockItem(Blocks.TRANSPOSER.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> HOLOGRAM_PROJECTOR = ITEMS.register("hologram_projector", () ->
+            new BlockItem(Blocks.HOLOGRAM_PROJECTOR.get(), new Item.Properties()));
+
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
     }
