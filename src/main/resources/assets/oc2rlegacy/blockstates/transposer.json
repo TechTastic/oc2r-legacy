@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "oc2rlegacy:block/transposer"
+    }
+  }
+}
